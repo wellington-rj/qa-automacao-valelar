@@ -30,7 +30,7 @@ Além da automação, também foi realizada a **documentação dos casos de test
 
 # Estrutura do projeto
 
-'''
+```
 qa_valelar
 │
 ├─ README.md
@@ -46,7 +46,7 @@ qa_valelar
 │ └─ cadastro-imovel.cy.js
 │
 └─ cypress.config.js
----
+```
 
 # Casos de teste e resultados
 
