@@ -6,7 +6,7 @@ Este projeto foi criado com o objetivo de **praticar automação de testes, orga
 
 ---
 
-# Objetivo
+## Objetivo
 
 Validar as principais funcionalidades do sistema:
 
@@ -18,7 +18,7 @@ Além da automação, também foi realizada a **documentação dos casos de test
 
 ---
 
-# Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - JavaScript
 - Cypress
@@ -28,7 +28,7 @@ Além da automação, também foi realizada a **documentação dos casos de test
 
 ---
 
-# Estrutura do projeto
+## Estrutura do projeto
 
 ```
 qa_valelar
@@ -48,7 +48,7 @@ qa_valelar
 └─ cypress.config.js
 ```
 
-# Casos de teste e resultados
+## Casos de teste e resultados
 
 Os cenários de teste documentados podem ser encontrados em: docs/casos-de-teste.md
 
@@ -62,7 +62,7 @@ Os testes cobrem:
 
 ---
 
-# Como executar o projeto
+## Como executar o projeto
 
 ### 1 — Clonar repositório
 
