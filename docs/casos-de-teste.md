@@ -62,59 +62,184 @@ Conforme teste.
 
 ## CT-003 — Cadastro sem preencher campo Nome
 
-Resultado esperado: sistema deve impedir cadastro e informar que nome é obrigatório.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário sem informar o campo **Nome**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Deixar o campo Nome vazio
+3. Preencher os demais campos obrigatórios
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que o campo Nome é obrigatório.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-004 — Cadastro sem preencher campo Email
 
-Resultado esperado: sistema deve impedir cadastro e informar que email é obrigatório.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário sem informar o campo **Email**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Deixar o campo Email vazio
+3. Preencher os demais campos obrigatórios
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que o campo Email é obrigatório.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-005 — Cadastro sem preencher campo Telefone
 
-Resultado esperado: sistema deve impedir cadastro e informar que telefone é obrigatório.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário sem informar o campo **Telefone**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Deixar o campo Telefone vazio
+3. Preencher os demais campos obrigatórios
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que o campo Telefone é obrigatório.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-006 — Cadastro sem preencher campo Senha
 
-Resultado esperado: sistema deve impedir cadastro e informar que senha é obrigatória.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário sem informar o campo **Senha**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Deixar o campo Senha vazio
+3. Preencher os demais campos obrigatórios
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que o campo Senha é obrigatório.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-007 — Cadastro sem preencher Confirmar Senha
 
-Resultado esperado: sistema deve impedir cadastro.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário sem informar o campo **Confirmar Senha**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Deixar o campo Confirmar Senha vazio
+3. Preencher os demais campos obrigatórios
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que o campo Confirmar Senha é obrigatório.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-008 — Senhas diferentes
 
-Resultado esperado: sistema deve impedir cadastro e informar que senhas não coincidem.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário com **Senha e Confirmar Senha diferentes**.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
+
+**Passos**
+
+1. Acessar página de cadastro
+2. Preencher todos os campos obrigatórios
+3. Informar uma senha
+4. Informar senha diferente no campo Confirmar Senha
+5. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que as senhas não coincidem.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-009 — Senha com menos de 8 caracteres
 
-Resultado esperado: sistema deveria exibir mensagem de senha fraca.
+**Objetivo**  
+Verificar o comportamento do sistema ao tentar cadastrar um usuário utilizando **senha com menos de 8 caracteres**.
 
-Resultado obtido: cadastro foi bloqueado mas **sem mensagem clara ao usuário**.
+**Pré-condição**  
+Sistema acessível e formulário de cadastro disponível.
 
-Status: ⚠️ Aprovado com melhoria necessária
+**Passos**
+
+1. Acessar página de cadastro
+2. Preencher todos os campos obrigatórios
+3. Inserir senha com menos de 8 caracteres
+4. Clicar em cadastrar
+
+**Resultado esperado**  
+Sistema deve impedir cadastro e informar que a senha deve possuir no mínimo **8 caracteres**.
+
+**Resultado obtido**  
+Cadastro foi bloqueado, porém **sem mensagem clara ao usuário**.
+
+**Status**  
+⚠️ Aprovado com melhoria necessária
 
 ---
 
@@ -122,37 +247,102 @@ Status: ⚠️ Aprovado com melhoria necessária
 
 ## CT-001 — Login com sucesso
 
-Resultado esperado: usuário autenticado e redirecionado para página inicial.
+**Objetivo**  
+Garantir que o usuário consiga realizar login com uma conta cadastrada.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Usuário deve possuir uma conta válida cadastrada no sistema.
+
+**Passos**
+
+1. Acessar a página de login
+2. Informar e-mail e senha corretos
+3. Clicar em Entrar
+
+**Resultado esperado**  
+Sistema deve redirecionar para a página inicial com o usuário logado.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-002 — Login com senha inválida
 
-Resultado esperado: mensagem de erro informando senha incorreta.
+**Objetivo**  
+Garantir que o sistema não permita login quando a senha estiver incorreta.
 
-Resultado obtido: login bloqueado mas **sem mensagem clara ao usuário**.
+**Pré-condição**  
+Usuário deve possuir conta cadastrada e informar e-mail correto.
 
-Status: ⚠️ Aprovado com melhoria necessária
+**Passos**
+
+1. Acessar a página de login
+2. Informar e-mail correto
+3. Informar senha incorreta
+4. Clicar em Entrar
+
+**Resultado esperado**  
+Falha no login e exibição de mensagem informando senha incorreta.
+
+**Resultado obtido**  
+Login bloqueado, porém sem mensagem de feedback ao usuário informando erro na senha.
+
+**Status**  
+⚠️ Aprovado com melhorias necessárias
 
 ---
 
 ## CT-003 — Login com campos vazios
 
-Resultado esperado: sistema deve impedir login e indicar campos obrigatórios.
+**Objetivo**  
+Garantir que o sistema não permita login quando os campos estiverem vazios.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Usuário deve acessar a página de login.
+
+**Passos**
+
+1. Acessar a página de login
+2. Clicar em Entrar sem preencher os campos
+
+**Resultado esperado**  
+Falha no login e mensagem indicando que existem campos obrigatórios vazios.
+
+**Resultado obtido**  
+Conforme esperado.
+
+**Status**  
+✅ Aprovado
 
 ---
 
-## CT-004 — Login com email sem cadastro
+## CT-004 — Login com e-mail não cadastrado
 
-Resultado esperado: sistema deve informar que conta não existe.
+**Objetivo**  
+Garantir que o sistema não permita login com e-mail que não possui cadastro.
 
-Resultado obtido: login bloqueado mas **sem feedback ao usuário**.
+**Pré-condição**  
+Usuário deve acessar a página de login.
 
-Status: ⚠️ Aprovado com melhoria necessária
+**Passos**
+
+1. Acessar a página de login
+2. Informar e-mail não cadastrado
+3. Informar uma senha qualquer
+4. Clicar em Entrar
+
+**Resultado esperado**  
+Falha no login com mensagem informando que o usuário não possui cadastro.
+
+**Resultado obtido**  
+Sistema apenas bloqueou o login, sem apresentar mensagem informando que a conta não existe.
+
+**Status**  
+⚠️ Aprovado com melhorias necessárias
 
 ---
 
@@ -160,14 +350,49 @@ Status: ⚠️ Aprovado com melhoria necessária
 
 ## CT-001 — Cadastro de imóvel com sucesso
 
-Resultado esperado: imóvel cadastrado e exibido na lista de imóveis.
+**Objetivo**  
+Verificar se o sistema cadastra imóveis corretamente.
 
-Status: ✅ Aprovado
+**Pré-condição**  
+Usuário deve estar logado e possuir permissão de cadastro de imóveis.
+
+**Passos**
+
+1. Acessar o menu de cadastro de imóvel
+2. Preencher os campos obrigatórios (endereço, valor, tipo, entre outros)
+3. Clicar em Salvar
+
+**Resultado esperado**  
+O imóvel deve ser cadastrado com sucesso e aparecer na lista de imóveis disponíveis.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+✅ Aprovado
 
 ---
 
 ## CT-002 — Inserir preço com letras
 
-Resultado esperado: sistema deve bloquear cadastro e informar valor inválido.
+**Objetivo**  
+Verificar se o sistema impede cadastro quando o campo preço contém letras.
 
-Status: ⚠️ Aprovado / Reprovado (depende da validação do sistema)
+**Pré-condição**  
+Usuário deve estar logado e possuir permissão de cadastro de imóveis.
+
+**Passos**
+
+1. Acessar o menu de cadastro de imóvel
+2. Preencher os campos obrigatórios corretamente, exceto o preço
+3. No campo preço, inserir valor contendo letras
+4. Clicar em Salvar
+
+**Resultado esperado**  
+Sistema deve bloquear o cadastro e informar que o valor do preço é inválido.
+
+**Resultado obtido**  
+Conforme teste.
+
+**Status**  
+⚠️ Aprovado / Reprovado
