@@ -6,8 +6,27 @@ describe("Cadastro", () => {
   });
 
   it("Cadastro com sucesso", () => {
-    cy.visit("http://127.0.0.1:8000", { failOnStatusCode: false });
-    cy.wait(500);
+    cy.cadastroTeste( "lucas", null, "988777777", "988776755", "1234567890", "1234567890");
+  });
+
+  it("Cadastro com senha fraca (-8 dígitos)", () => {
+    cy.cadastroTeste( "lucas", null, "988777777", "988776755", "1234567", "1234567", true);
+  });
+
+
+  it("Email invalido (sem local)", () => {
+    cy.cadastroTeste( "lucas", "@gmail.com", "988777777", "988776755", "1234567890", "1234567890", true);
+  });
+
+  it("Email inválido (sem domínio)", () => {
+    cy.cadastroTeste( "lucas", "tiago123@", "988777777", "988776755", "123456789", "123456789", true);
+  });
+  
+
+});
+  /*
+  it("Cadastro com sucesso", () => {
+    cy.acessoApp();
     cy.contains("Cadastrar").click();
 
     cy.contains("Crie sua conta", { timeout: 5000 }).should("exist");
@@ -77,4 +96,5 @@ describe("Cadastro", () => {
     // Verifica que o formulário não foi enviado
     cy.get("form").should("be.visible");
   });
-});
+  */
+

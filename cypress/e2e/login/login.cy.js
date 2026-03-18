@@ -6,46 +6,31 @@ describe("Página Inicial", () => {
   });
 
   it("Acessa a página inicial e verifica texto", () => {
-    cy.visit("http://127.0.0.1:8000", { failOnStatusCode: false });
-    cy.wait(500);
-    cy.contains("Entrar").should("exist");
-    cy.contains("Casas Disponíveis").should("exist");
+    cy.acessoAppTestLogin();
   });
-});
 
-describe("Login", () => {
   it("login com sucesso", () => {
-    cy.visit("http://127.0.0.1:8000");
-    cy.wait(500);
-    cy.get(":nth-child(3) > .nav-link").click();
-    cy.get("#email").type("wellingtonribeirojardim123@gmail.com");
-    cy.wait(200);
-    cy.get("#password").type("123456789");
-    cy.get(".div").click();
-    cy.wait(2000);
-    cy.get("button").contains("Entrar").should("not.exist");
+    cy.loginTeste("wellingtonribeirojardim123@gmail.com", "123456789");
+    // ← deveFalhar = false (automático)
   });
 
-  it("login com senha inválida", () => {
-    cy.visit("http://127.0.0.1:8000");
-    cy.wait(500);
-    cy.get(":nth-child(3) > .nav-link").click();
-    cy.get("#email").type("wellingtonribeirojardim123@gmail.com");
-    cy.wait(200);
-    cy.get("#password").type("12345");
-    cy.get(".div").click();
-    cy.get("button").contains("Entrar");
+  it("Senha incorreta", () => {
+    cy.loginTeste("wellingtonribeirojardim123@gmail.com", "12345wewewe", true);
+    // ← deveFalhar = false (automático)
   });
 
-  it("login com email inexistente", () => {
-    cy.visit("http://127.0.0.1:8000");
-    cy.wait(500);
-    cy.get(":nth-child(3) > .nav-link").click();
-    cy.get("#email").type("wellingtonribeirojardim2errado@gmail.com");
-    cy.wait(200);
-    cy.get("#password").type("1234567890");
-    cy.get(".div").click();
-    cy.get("button").contains("Entrar");
-    cy.url().should("include", "/login");
+  it("Senha vazia", () => {
+    cy.loginTeste("wellingtonribeirojardim123@gmail.com", " ", true);
+    // → true → verifica erro
+  });
+
+  it("Email inválido", () => {
+    cy.loginTeste("wellingtonribeiro@gmail.com", "123456789", true);
+    // → true → verifica botão "Entrar" ainda existe
+  });
+
+  it("Email vazio", () => {
+    cy.loginTeste(" ", "123456789", true);
+    // → true → verifica erro
   });
 });
