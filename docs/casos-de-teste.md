@@ -15,7 +15,7 @@ Funcionalidades testadas:
 
 ## CT-001 — Cadastro de usuário com sucesso
 
-**Objetivo**  
+Objetivo  
 Verificar se o sistema cadastra novos usuários corretamente.
 
 **Pré-condição**  
