@@ -131,6 +131,10 @@ Funcionalidades testadas:
 **Resultado obtido** Email rejeitado com sucesso.
 
 **Status** ✅Aprovado
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/login-cadastro-concluido
 
 ---
 
