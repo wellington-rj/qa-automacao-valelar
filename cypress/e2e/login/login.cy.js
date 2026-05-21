@@ -10,22 +10,22 @@ describe("Página Inicial", () => {
   });
 
   it("login com sucesso", () => {
-    cy.loginTeste("wellingtonribeirojardim123@gmail.com", "123456789");
+    cy.loginTeste("qateste@gmail.com", "123456789");
     // ← deveFalhar = false (automático)
   });
 
   it("Senha incorreta", () => {
-    cy.loginTeste("wellingtonribeirojardim123@gmail.com", "12345wewewe", true);
+    cy.loginTeste("qateste@gmail.com", "12345wewewe", true);
     // ← deveFalhar = false (automático)
   });
 
   it("Senha vazia", () => {
-    cy.loginTeste("wellingtonribeirojardim123@gmail.com", " ", true);
+    cy.loginTeste("qateste@gmail.com", " ", true);
     // → true → verifica erro
   });
 
   it("Email inválido", () => {
-    cy.loginTeste("wellingtonribeiro@gmail.com", "123456789", true);
+    cy.loginTeste("qateste123@gmail.com", "123456789", true);
     // → true → verifica botão "Entrar" ainda existe
   });
 
