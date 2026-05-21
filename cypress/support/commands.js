@@ -18,7 +18,7 @@ Cypress.Commands.add("acessoAppTestCadastroCasa", () => {
   cy.wait(500);
   cy.contains("Entrar").click();
   cy.get("#email").type("qateste@gmail.com");
-  cy.get("password").type("123456789");
+  cy.get("#password").type("123456789");
   cy.contains("Entrar").click();
   cy.url().should("include", "/dashboard");
 });
@@ -39,7 +39,7 @@ Cypress.Commands.add("loginTeste", (email, senha, deveFalhar = false) => {
 
 Cypress.Commands.add("cadastroTeste",(nome, email, telefone1, telefone2, senha, confirmarSenha, deveFalhar = false) => {
     const emailFinal = email ||
-     `wellington.teste${Date.now()}${Math.floor(Math.random()*1000)}@gmail.com`;
+     `quality.teste${Date.now()}${Math.floor(Math.random()*1000)}@gmail.com`;
 
     cy.acessoAppTestCadastro();
     cy.contains("Cadastrar").click();
@@ -68,13 +68,13 @@ Cypress.Commands.add('cadastrarImovelValido', (override = {}) => {
   cy.contains("Anuncie seu Imóvel").click();
 
   const imovel = {
-    titulo: override.titulo || 'Casa 3qts Centro - Vendo urgente',  // Usa seu valor ou padrão
+    titulo: override.titulo || `Casa teste cypress ${Date.now()}`,  // Usa seu valor ou padrão
     valor: override.valor || '450000',
     tipo: override.tipo || 'Casa',
     bairro: override.bairro || 'Centro',
     cidade: override.cidade || 'Belo Horizonte',
     estado: override.estado || 'MG',
-    cep: override.cep || '30190000',
+    cep: override.cep || '30192-000',
     logradouro: override.logradouro || 'Rua das Flores',
     numero: override.numero || '123',
     quartos: override.quartos || '3',
@@ -82,49 +82,47 @@ Cypress.Commands.add('cadastrarImovelValido', (override = {}) => {
     tamanho: override.tamanho || '80',
     
   };
-
   // ============================================
   // PASSO 2: PREENCHE CAMPOS OBRIGATÓRIOS
   // ============================================
-  
   //  Campo TÍTULO - procura por 3 seletores possíveis:
   // 1. input com placeholder contendo "Título"
   // 2. input com name="titulo"  
   // 3. input com id="titulo"
-  cy.get('input[placeholder*="Título"], input[name="titulo"], #titulo')
+  cy.get('input[placeholder*= "Linda Casa de Praia"], input[name="Título do Imóvel"], #property_title')
     .type(imovel.titulo);  // DIGITA o título no campo
 
 cy.get('input[placeholder*="tamanho"], input[name="tamanho"], #property_size')
     .type(imovel.tamanho);  // DIGITA o título no campo
 
   //  Campo VALOR - mesma lógica, 3 seletores possíveis
-  cy.get('input[placeholder*="Valor"], input[name="valor"], #valor')
+  cy.get('input[placeholder*="Valor de Imóvel"], input[name="valor"], #rental_value')
     .type(imovel.valor);
 
   //  Campo TIPO (select dropdown)
-  cy.get('select[name="tipo"], #tipo')
+  cy.get('select[name="tipo"], #property_type')
     .select(imovel.tipo);  // SELECIONA opção no dropdown
 
   // Campo BAIRRO
-  cy.get('input[placeholder*="Bairro"], input[name="bairro"], #bairro')
+  cy.get('input[placeholder*="Bairro"], input[name="Bairro"], #neighborhood')
     .type(imovel.bairro);
 
   //  Campo CIDADE
-  cy.get('input[placeholder*="Cidade"], input[name="cidade"], #cidade')
+  cy.get('input[placeholder*="Cidade"], input[name="cidade"], #city')
     .type(imovel.cidade);
 
   // Campo ESTADO
-  cy.get('input[placeholder*="Estado"], input[name="estado"], #estado')
+  cy.get('input[placeholder*="Ex: Sp"], input[name="Estado"], #state')
     .type(imovel.estado);
 
   //  Campo CEP
-  cy.get('input[placeholder*="CEP"], input[name="cep"], #cep')
+  cy.get('input[placeholder*="CEP"], input[name="CEP"], #zip_code')
     .type(imovel.cep);
 
 cy.get('input[placeholder*="Rua"], input[name="street"], #street')
     .type(imovel.logradouro);
 
-cy.get('input[placeholder*="Rua"], input[name="street"], #number')
+cy.get('input[placeholder*="Número"], input[name="Número"], #number')
     .type(imovel.numero);
 
   cy.get('input[placeholder*="Quartos"], input[name="number_rooms"], #number_rooms')
@@ -139,8 +137,8 @@ cy.get('input[placeholder*="Rua"], input[name="street"], #number')
   // PASSO 3: CLICA NO BOTÃO SALVAR
   // ============================================
   // Procura por qualquer um desses 3 seletores do botão
-  cy.get('button[type="submit"], .btn-salvar, [data-testid="Enviar"]')
-    .click();  // CLICA para enviar formulário
+  cy.contains("button", "Enviar").click();
+  // CLICA para enviar formulário
 });
 
 
